@@ -106,6 +106,15 @@ class MinHeap {
 
   }
 
+  siftUp(currentIdx, heap) {
+    const parentIdx = Math.floor(currentIdx / 2 - 1)
+    while (parentIdx > 0 && heap[parentIdx] > heap[currentIdx]) {
+      currentIdx = parentIdx
+      parentIdx = Math.floor(currentIdx / 2 - 1)
+
+    }
+  }
+
 
   swap(i, j, heap) {
     const holder = heap[i]
