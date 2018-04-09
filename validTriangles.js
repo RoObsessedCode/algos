@@ -4,13 +4,25 @@ function validTriangles(arr) {
   const result = []
 
   for (let i = 0; i < arr.length -2; i++) {
-    let left = i + 1
-    let right = arr.length - 1
+    let a = 0
+    let b = 1
+    let right = b - 1
+    let left = 0
     while (left < right) {
-      if (isTriangle(arr[left], arr[right], arr[i])) {
-        result.push([arr[left], arr[right], arr[i]])
-        left++
-        right--
+      const i = math.floor((left + right) / 2)
+
+      if (isTriangle(arr[i], arr[a], arr[b])) result.push([arr[i], arr[a], arr[b]]);
+
+      if (arr[i] > arr[a] && arr[i] > arr[b] ) {
+        right = i - 1
+      }
+
+      else if (i > a && i < b) {
+
+      }
+
+      else if (i < a && i < b) {
+
       }
     }
   }
@@ -26,7 +38,7 @@ function isTriangle(a, b, c) {
   let singleB = a + c > b ? true : false
   let singleC = a + b > c ? true : false
 
-  if (singleA || singleB || singleC) {
+  if (singleA && singleB && singleC) {
     return true
   } else {
     return false
