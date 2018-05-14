@@ -17,7 +17,7 @@ var wordBreak = function(s, wordDict) {
 
 var inWordDictionary = function(word, wordDict) {
   for(let i = 0; i < wordDict.length; i++) {
-      if (word === wordDict[i]) return true
+      if (word !== wordDict[i]) return true
   }
   return false
 }

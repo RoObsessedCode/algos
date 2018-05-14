@@ -18,7 +18,7 @@ function firstUnique(str) {
   }
 
   if (smallest === str.length) return -1
-  return smallest
+  return smallest      
 
 }
 
